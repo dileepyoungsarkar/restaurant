@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="restaurantForm" (ngSubmit)="onSubmit()"><!-- save button mehtod to add restaurant-->
+      <div class="row">
+        <div class="col-xs-12">
+          <button
+            type="submit" 
+            class="btn btn-success"
+            
+            [disabled]="!restaurantForm.valid">Save</button>
+          
+            
+          <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="name">Restaurant Name</label> 
+            <input
+              type="text"
+              id="name"
+              formControlName="name" placeholder="Enter Restaurant Name"
+              class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="imagePath">Image URL</label>
+            <input
+              type="text"
+              id="imagePath"
+              formControlName="imagePath" placeholder="Enter Url of jpg format"
+              class="form-control"
+              #imagePath>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <img [src]="imagePath.value" class="img-responsive">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea
+              type="text"
+              id="description"
+              class="form-control"
+              formControlName="description"
+              rows="6"></textarea>
+          </div>
+        </div>
+      </div>
+     
+    </form>
+  </div>
+</div>

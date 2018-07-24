@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success" (click)="onNewRestaurant()">Add Restaurant</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+    <input type="text" [(ngModel)]="search" placeholder=" search restaurant name"> <!--here filter search method is used -->
+    <style> 
+        input[type=text] {
+            width: 100px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+        
+            background-position: 10px 10px; 
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+        
+        input[type=text]:focus {
+            width: 100%;
+        }
+        </style>
+        <hr>
+    <div class="col-xs-12">
+    <app-restaurant-item
+      *ngFor="let restaurantEl of restaurants |filter: search ; let i = index "
+      [restaurant]="restaurantEl"
+      [index]="i"></app-restaurant-item> <!--adding restaurant using index number-->
+  </div>
+</div>
+
+
+
