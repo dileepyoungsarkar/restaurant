@@ -19,6 +19,12 @@ describe('RestaurantAddComponent', () => {
     fixture.detectChanges();
   });
 
+  beforeEach(() => {
+    fixture = TestBed.createComponent(RestaurantAddComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });

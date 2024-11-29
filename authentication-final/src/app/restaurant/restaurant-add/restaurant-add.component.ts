@@ -47,6 +47,11 @@ onSubmit() {
   } else {
     this.restaurantService.addRestaurant(this.restaurantForm.value);
   }
+  if (this.editMode) {
+    this.restaurantService.updateRestaurant(this.id, this.restaurantForm.value);//update the list
+  } else {
+    this.restaurantService.addRestaurant(this.restaurantForm.value);
+  }
   this.onCancel();
 }
 
